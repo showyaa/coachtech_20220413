@@ -22,17 +22,20 @@
             {{$item->created_at}}
           </td>
           <td>
+          <form action="/todo/update?id={{$item->id}}" method="post">
+          @csrf
             <input type="text" value="{{$item->content}}">
           </td>
           <td>
-            <form action="/todo/update" method="post">
-              @csrf
-              <input type="submit" formaction="{{route('todo.update')}}" value="更新">
-            </form>
+              <input type="submit" value="更新">
           </td>
+          </form>
+          <form action="/todo/delete?id={{$item->id}}" method="post">
+          @csrf
           <td>
-            <input type="submit" formaction="{{route('todo.delete')}}" value="削除">
+            <input type="submit" value="削除">
           </td>
+          </form>
         </tr>
         @endforeach
       </table>

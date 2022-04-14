@@ -12,10 +12,6 @@ class TodoController extends Controller
         $items = Content::all();
         return view('index', ['items' => $items]);
     }
-    public function add()
-    {
-        return view('add');
-    }
     public function create(Request $request)
     {
         $form = $request->all();
@@ -24,11 +20,15 @@ class TodoController extends Controller
     }
     public function update(Request $request)
     {
-        $content = Content::find($request->id);
-        return view('index', ['form' => $content]);
         $form = $request->all();
         unset($form['_token']);
         Content::where('id', $request->id)->update($form);
+        return redirect('/');
+    }
+    public function delete(Request $request)
+    {
+        $items = Content::find($request->id);
+        $item->delete();
         return redirect('/');
     }
 }
