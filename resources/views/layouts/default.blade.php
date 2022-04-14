@@ -8,7 +8,7 @@
   <title>@yield('title')</title>
   <style>
     body {
-      background-color: blue;
+      background-color: navy;
     }
     .content {
       background-color: white;

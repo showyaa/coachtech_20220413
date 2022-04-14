@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Content;
 use Illuminate\Http\Request;
+use App\Http\Requests\ContentRequest;
 
 class TodoController extends Controller
 {
@@ -11,6 +12,10 @@ class TodoController extends Controller
     {
         $items = Content::all();
         return view('index', ['items' => $items]);
+    }
+    public function formrequest(ContetnRequest $request)
+    {
+        
     }
     public function create(Request $request)
     {
@@ -27,8 +32,7 @@ class TodoController extends Controller
     }
     public function delete(Request $request)
     {
-        $items = Content::find($request->id);
-        $item->delete();
+        Content::find($request->id)->delete();
         return redirect('/');
     }
 }
