@@ -13,17 +13,13 @@ class TodoController extends Controller
         $items = Content::all();
         return view('index', ['items' => $items]);
     }
-    public function formrequest(ContetnRequest $request)
-    {
-        
-    }
-    public function create(Request $request)
+    public function create(ContentRequest $request)
     {
         $form = $request->all();
         Content::create($form);
         return redirect('/');
     }
-    public function update(Request $request)
+    public function update(ContentRequest $request)
     {
         $form = $request->all();
         unset($form['_token']);

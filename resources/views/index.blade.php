@@ -10,6 +10,7 @@
 </head>
   <body>
     <div class="content">
+      <!-- 追加 -->
       <div class="add">
         <h1>Todo List</h1>
         <form action="/" method="post">
@@ -21,6 +22,7 @@
           <input type="submit" class="create" formaction="{{route('todo.create')}}" value="追加">
         </form>
       </div>
+      <!-- リスト -->
       <div class="lists">
         <table>
           <tr>

@@ -1,6 +1,7 @@
 body {
   position: relative;
   background-color: navy;
+  height: 100vh;
 }
 
 .content {
@@ -47,11 +48,18 @@ h1 {
 .lists table {
   width: 100%;
   margin: 0 auto;
-  border: 1px solid black;
+}
+
+.lists th {
+  padding-bottom: 30px;
 }
 
 .lists table td {
   text-align: center;
+}
+
+.lists table td {
+  padding-bottom: 10px;
 }
 
 .task {
@@ -103,4 +111,42 @@ h1 {
   border-radius: 10px;
   font-weight: bold;
   transition: 0.2s;
+}
+
+
+/* タブレット */
+@media screen and (max-width: 768px) {
+  .content {
+    width: 80%;
+  }
+}
+/* スマホ */
+@media screen and (max-width: 480px) {
+  .content {
+    width: 80%;
+    top: 25%;
+  }
+  .text {
+    width: 70%;
+    padding: 0.4em;
+  }
+  .task {
+    font-size: 7px;
+    width: 80%;
+  }
+  .lists {
+    margin: 10px;
+  }
+  .lists table {
+    font-size: 10px;
+  }
+  .lists table th {
+    font-size: 10px;
+  }
+  .create,
+  .update,
+  .delete {
+    padding: 0.4em 5px;
+    font-size: 10px;
+  }
 }

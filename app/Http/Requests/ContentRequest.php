@@ -11,14 +11,7 @@ class ContentRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
-    {
-        if ($this->path() == '/') {
-            return true;
-        } else {
-            return false;
-        }
-    }
+
 
     /**
      * Get the validation rules that apply to the request.
@@ -35,7 +28,7 @@ class ContentRequest extends FormRequest
     {
         return [
             'content.required' => '入力してください',
-            'content.max:20' => '20文字以内で入力してください'
+            'content.max' => '20文字以内で入力してください'
         ];
     }
 }
